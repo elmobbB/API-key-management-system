@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { useSearchParams } from " /navigation";
+import { useSearchParams } from "next/navigation";
 import Notification from "../dashboards/components/Notification";
 
 export const runtime = "nodejs";
