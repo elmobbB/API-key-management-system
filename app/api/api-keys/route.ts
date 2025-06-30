@@ -45,17 +45,3 @@ export async function DELETE(req: NextRequest) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   return NextResponse.json({ success: true });
 }
-
-// POST /validate - validate API key
-export async function POST_validate(req: NextRequest) {
-  const { apiKey } = await req.json();
-  const { data, error } = await supabase
-    .from("api_keys")
-    .select("id")
-    .eq("key", apiKey)
-    .single();
-  if (error || !data) {
-    return NextResponse.json({ valid: false });
-  }
-  return NextResponse.json({ valid: true });
-}
