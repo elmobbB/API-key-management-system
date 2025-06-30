@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
-
+import Notification from "./components/Notification";
+import Link from "next/link";
 // Define ApiKey type
 interface ApiKey {
   id: string;
@@ -87,13 +88,12 @@ const Sidebar = ({ onHide }: { onHide?: () => void }) => (
             </a>
           </li>
           <li>
-            <a
+            <Link
               className="flex items-center px-8 py-2 text-gray-700 hover:bg-gray-100 rounded"
-              href="#"
+              href="/playground"
             >
-              {" "}
               <span className="mr-3">🧪</span> API Playground
-            </a>
+            </Link>
           </li>
           <li>
             <a
@@ -636,44 +636,11 @@ export default function DashboardPage() {
           </div>
         )}
         {toast && (
-          <div
-            className="fixed"
-            style={{
-              top: "2rem",
-              left: "50%",
-              transform: "translateX(-50%)",
-              zIndex: 50,
-              background:
-                toast.color === "green"
-                  ? "#22c55e"
-                  : toast.color === "red"
-                  ? "#ef4444"
-                  : "#3b82f6",
-              color: "white",
-              padding: "1rem 2rem",
-              borderRadius: "0.5rem",
-              fontWeight: "bold",
-              boxShadow: "0 2px 8px rgba(0,0,0,0.15)",
-              minWidth: "300px",
-              textAlign: "center",
-            }}
-          >
-            {toast.message}
-            <button
-              onClick={() => setToast(null)}
-              style={{
-                marginLeft: "1rem",
-                background: "transparent",
-                border: "none",
-                color: "white",
-                fontSize: "1.2rem",
-                cursor: "pointer",
-              }}
-              aria-label="Close"
-            >
-              ×
-            </button>
-          </div>
+          <Notification
+            message={toast.message}
+            color={toast.color}
+            onClose={() => setToast(null)}
+          />
         )}
       </div>
     </div>

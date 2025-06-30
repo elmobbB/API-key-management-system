@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const Sidebar = ({ onHide }: { onHide?: () => void }) => (
   <aside className="w-64 bg-white border-r min-h-screen flex flex-col justify-between">
@@ -77,13 +78,12 @@ const Sidebar = ({ onHide }: { onHide?: () => void }) => (
             </a>
           </li>
           <li>
-            <a
+            <Link
               className="flex items-center px-8 py-2 text-gray-700 hover:bg-gray-100 rounded"
-              href="#"
+              href="/playground"
             >
-              {" "}
               <span className="mr-3">🧪</span> API Playground
-            </a>
+            </Link>
           </li>
           <li>
             <a
