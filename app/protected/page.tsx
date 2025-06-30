@@ -1,7 +1,10 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams } from " /navigation";
 import Notification from "../dashboards/components/Notification";
+
+export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
 
 const ProtectedPage = () => {
   const searchParams = useSearchParams();
