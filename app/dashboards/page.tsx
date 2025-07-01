@@ -118,11 +118,11 @@ const Sidebar = ({ onHide }: { onHide?: () => void }) => (
     </div>
     <div className="flex items-center px-8 py-6 border-t">
       <img
-        src="https://randomuser.me/api/portraits/men/32.jpg"
+        // src="https://randomuser.me/api/portraits/men/32.jpg"
         alt="avatar"
         className="w-8 h-8 rounded-full mr-3"
       />
-      <span className="text-gray-700 font-medium">Eden Marco</span>
+      <span className="text-gray-700 font-medium">Claire Poon</span>
       <span className="ml-auto">⚙️</span>
     </div>
   </aside>
@@ -216,7 +216,9 @@ export default function DashboardPage() {
       body: JSON.stringify({
         name: newKeyName,
         usage: 0,
-        key: "tvly-" + Math.random().toString(36).slice(2, 18),
+        key: `dandi-${Date.now()}${Math.random()
+          .toString(36)
+          .substring(2, 15)}`,
         monthly_limit:
           limitMonthly && monthlyLimit ? parseInt(monthlyLimit) : undefined,
       }),

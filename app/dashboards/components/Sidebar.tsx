@@ -108,11 +108,11 @@ const Sidebar = ({ onHide }: { onHide?: () => void }) => (
     </div>
     <div className="flex items-center px-8 py-6 border-t">
       <img
-        src="https://randomuser.me/api/portraits/men/32.jpg"
+        // src="https://randomuser.me/api/portraits/men/32.jpg"
         alt="avatar"
         className="w-8 h-8 rounded-full mr-3"
       />
-      <span className="text-gray-700 font-medium">Eden Marco</span>
+      <span className="text-gray-700 font-medium"> Claire Poon</span>
       <span className="ml-auto">⚙️</span>
     </div>
   </aside>

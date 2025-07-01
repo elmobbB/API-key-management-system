@@ -35,7 +35,9 @@ export function useApiKeys() {
         body: JSON.stringify({
           ...keyData,
           usage: keyData.usage ?? 0,
-          key: keyData.key ?? "tvly-" + Math.random().toString(36).slice(2, 18),
+          key:
+            keyData.key ??
+            `dandi-${Date.now()}${Math.random().toString(36).substring(2, 15)}`,
         }),
       });
       fetchApiKeys();
